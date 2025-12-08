@@ -4,6 +4,7 @@ from tkinter import *
 import pygame
 import os
 
+
 pygame.mixer.init()
 
 is_paused = False
@@ -35,3 +36,23 @@ def pause_song():
     global is_paused
     pygame.mixer.music.pause()
     is_paused = True
+
+# Skip Track
+# def next_song():
+
+# Rewind Track
+# def previous_song():
+
+# play next song when current song ends?
+
+
+
+# GUI #
+
+app = Tk()
+app.title('music player⋆｡♬°⭒˚｡⋆♪')
+app.geometry('375x500')
+app.resizable(0, 0) # prevents resizing
+
+
+app.mainloop() # keeps app open
