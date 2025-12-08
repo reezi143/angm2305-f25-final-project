@@ -38,7 +38,16 @@ def pause_song():
     is_paused = True
 
 # Skip Track
-# def next_song():
+def next_song():
+    # only works till second song; keeps skipping to beginning of 2
+    selection = song_listbox.curselection()
+    if selection:
+        next_song_index = int(selection[0]) + 1
+        if next_song_index < song_listbox.size():
+            next_song = song_listbox.get(next_song_index)
+            current_song = next_song
+            pygame.mixer.music.load(current_song)
+            pygame.mixer.music.play()
 
 # Rewind Track
 # def previous_song():
@@ -115,7 +124,11 @@ load_btn.place(x=6, y=118)
 # Bottom Strip
 deco_frame = LabelFrame(app, bg='rosybrown', width=375, height=24)
 deco_frame.place(x=0, y=478)
-    # deco_text = '⋆｡‧˚ʚ♪ɞ˚‧｡⋆'
+
+deco_text = StringVar(app, value='⋆｡‧˚ʚ♪ɞ˚‧｡⋆')
+
+deco_label = Label(deco_frame, textvariable=deco_text, bg='rosybrown', font=("Georgia", 12), width=36,)
+deco_label.place(x=20, y=0)
 
 
 app.mainloop() # keeps app open
