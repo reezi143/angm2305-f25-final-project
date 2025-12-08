@@ -93,6 +93,12 @@ play_btn = Button(control_panel, image=play_btn_img, bg='rosybrown1', width=30, 
                   command=lambda: play_song(current_song))
 play_btn.place(x=170, y=2)
 
+pause_btn_img = PhotoImage(file='pause.png')
+pause_btn = Button(control_panel, image=pause_btn_img, bg='rosybrown1', width=30, height=30,
+                    command=lambda: pause_song())
+pause_btn.place(x=170, y=78)
+
+
 load_btn = Button(control_panel, text='🖤♪~load playlist~♪🖤', bg='rosybrown1', fg='gray12', font=("Georgia", 13), width=35,
                   command=lambda: load(song_listbox))
 load_btn.place(x=6, y=138)
