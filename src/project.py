@@ -38,8 +38,8 @@ def pause_song():
     is_paused = True
 
 # Skip Track
-def next_song():
-    # only works till second song; keeps skipping to beginning of 2
+def next_song(song_name):
+    # sort of works; next song isn't highlighted, name displays for previously skipped song, song only skips from highlight track
     selection = song_listbox.curselection()
     if selection:
         next_song_index = int(selection[0]) + 1
@@ -48,6 +48,9 @@ def next_song():
             current_song = next_song
             pygame.mixer.music.load(current_song)
             pygame.mixer.music.play()
+            song_name.set(song_listbox.get(ACTIVE))
+
+
 
 # Rewind Track
 # def previous_song():
@@ -109,7 +112,7 @@ pause_btn.place(x=170, y=72)
 
 next_btn_img = PhotoImage(file='skip.png')
 next_btn = Button(control_panel, image=next_btn_img, bg='rosybrown1', width=30, height=30,
-                    command=lambda: next_song()) # doesn't work/placeholder
+                    command=lambda: next_song(current_song)) # doesn't work/placeholder
 next_btn.place(x=220, y=36)
 
 prev_btn_img = PhotoImage(file='prev.png')
