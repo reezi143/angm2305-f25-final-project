@@ -6,6 +6,8 @@ import os
 
 pygame.mixer.init()
 
+is_paused = False
+
 # Load Music
 def load(listbox):
     os.chdir(filedialog.askdirectory(title='choose playlist~♡⊹♬₊⋆'))
@@ -15,3 +17,15 @@ def load(listbox):
 
     for track in tracks:
         listbox.insert(END, track)
+
+# Play Music
+def play_song(song_name: StringVar):
+    song_name.set(song_listbox.get(ACTIVE))
+    global is_paused
+
+    if not is_paused: # plays indicated song
+        pygame.mixer.music.load(song_listbox.get(ACTIVE))
+        pygame.mixer.music.play()
+    else: # unpauses currently playing song
+        pygame.mixer.music.unpause()
+        is_paused = False
