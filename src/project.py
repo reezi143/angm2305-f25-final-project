@@ -39,7 +39,7 @@ def pause_song():
 
 # Skip Track
 def next_song(song_name):
-    # sort of works; next song isn't highlighted, name displays for previously skipped song, song only skips from highlight track
+    # sort of works; next song isn't highlighted, name displays for previously skipped song, song only skips from highlight
     selection = song_listbox.curselection()
     if selection:
         next_song_index = int(selection[0]) + 1
@@ -49,7 +49,6 @@ def next_song(song_name):
             pygame.mixer.music.load(current_song)
             pygame.mixer.music.play()
             song_name.set(song_listbox.get(ACTIVE))
-
 
 
 # Rewind Track
