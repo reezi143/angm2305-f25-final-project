@@ -96,22 +96,26 @@ play_btn.place(x=170, y=2)
 pause_btn_img = PhotoImage(file='pause.png')
 pause_btn = Button(control_panel, image=pause_btn_img, bg='rosybrown1', width=30, height=30,
                     command=lambda: pause_song())
-pause_btn.place(x=170, y=78)
+pause_btn.place(x=170, y=72)
 
 next_btn_img = PhotoImage(file='skip.png')
 next_btn = Button(control_panel, image=next_btn_img, bg='rosybrown1', width=30, height=30,
                     command=lambda: next_song()) # doesn't work/placeholder
-next_btn.place(x=220, y=40)
+next_btn.place(x=220, y=36)
 
 prev_btn_img = PhotoImage(file='prev.png')
 prev_btn = Button(control_panel, image=prev_btn_img, bg='rosybrown1', width=30, height=30,
                     command=lambda: previous_song()) # doesn't work/placeholder
-prev_btn.place(x=120, y=40)
 
 load_btn = Button(control_panel, text='🖤♪~load playlist~♪🖤', bg='rosybrown1', fg='gray12', font=("Georgia", 13), width=35,
                   command=lambda: load(song_listbox))
-load_btn.place(x=6, y=138)
+load_btn.place(x=6, y=118)
 
+
+# Bottom Strip
+deco_frame = LabelFrame(app, bg='rosybrown', width=375, height=24)
+deco_frame.place(x=0, y=478)
+    # deco_text = '⋆｡‧˚ʚ♪ɞ˚‧｡⋆'
 
 
 app.mainloop() # keeps app open
