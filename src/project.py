@@ -58,4 +58,21 @@ app_icon = PhotoImage(file='icon.png')
 app.iconphoto(False, app_icon)
 
 
+# Playlist Assets
+playlist_box = LabelFrame(app, fg='gray12', text='‧₊˚♪࿐₊˚⊹playlist‧₊˚♪࿐₊˚⊹', bg='rosybrown4')
+playlist_box.place(x=0, y=79, height=220, width=375)
+
+song_listbox = Listbox(playlist_box, fg='gray12', font=('Helvetica', 11), selectbackground='antiquewhite4')
+
+scroll_bar = Scrollbar(playlist_box, orient=VERTICAL)
+scroll_bar.pack(side=RIGHT, fill=BOTH)
+
+song_listbox.config(yscrollcommand=scroll_bar.set)
+
+scroll_bar.config(command=song_listbox.yview)
+
+song_listbox.pack(fill=BOTH, padx=5, pady=5)
+
+
+
 app.mainloop() # keeps app open
