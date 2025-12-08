@@ -52,7 +52,9 @@ def next_song(song_name):
 
 
 # Rewind Track
-# def previous_song():
+def rewind_song():
+    global is_paused
+    pygame.mixer.music.rewind()
 
 # play next song when current song ends?
 
@@ -116,7 +118,8 @@ next_btn.place(x=220, y=36)
 
 prev_btn_img = PhotoImage(file='prev.png')
 prev_btn = Button(control_panel, image=prev_btn_img, bg='rosybrown1', width=30, height=30,
-                    command=lambda: previous_song()) # doesn't work/placeholder
+                    command=lrewind()) # doesn't work/placeholder
+prev_btn.place(x=120, y=36)
 
 load_btn = Button(control_panel, text='🖤♪~load playlist~♪🖤', bg='rosybrown1', fg='gray12', font=("Georgia", 13), width=35,
                   command=lambda: load(song_listbox))
