@@ -29,3 +29,9 @@ def play_song(song_name: StringVar):
     else: # unpauses currently playing song
         pygame.mixer.music.unpause()
         is_paused = False
+
+# Pause Mong
+def pause_song():
+    global is_paused
+    pygame.mixer.music.pause()
+    is_paused = True
