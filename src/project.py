@@ -54,5 +54,8 @@ app.title('music player⋆｡♬°⭒˚｡⋆♪')
 app.geometry('375x500')
 app.resizable(0, 0) # prevents resizing
 
+app_icon = PhotoImage(file='icon.png') 
+app.iconphoto(False, app_icon)
+
 
 app.mainloop() # keeps app open
