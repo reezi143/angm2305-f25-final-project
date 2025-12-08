@@ -84,5 +84,10 @@ title_label = Label(now_playing, textvariable=current_song, bg='antiquewhite4', 
 title_label.place(x=20, y=16)
 
 
+# Control Panel
+control_panel = LabelFrame(app, fg='gray12', text='♪˚⁺control panel⁺˚♪', bg='mistyrose3', width=375, height=202)
+control_panel.place(y=300)
+
+
 
 app.mainloop() # keeps app open
