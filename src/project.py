@@ -74,5 +74,15 @@ scroll_bar.config(command=song_listbox.yview)
 song_listbox.pack(fill=BOTH, padx=5, pady=5)
 
 
+# Title Assets
+now_playing = LabelFrame(app, fg='gray12', text='₊°♬˚.⁺now playing⁺.˚♬°₊', bg='mistyrose1', width=375, height=80)
+now_playing.place(x=0, y=0)
+
+current_song = StringVar(app, value='♪˚⁺✩not playing✩⁺˚♪')
+
+title_label = Label(now_playing, textvariable=current_song, bg='antiquewhite4', font=("Georgia", 12), width=36)
+title_label.place(x=20, y=16)
+
+
 
 app.mainloop() # keeps app open
