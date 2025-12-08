@@ -88,6 +88,12 @@ title_label.place(x=20, y=16)
 control_panel = LabelFrame(app, fg='gray12', text='♪˚⁺control panel⁺˚♪', bg='mistyrose3', width=375, height=202)
 control_panel.place(y=300)
 
+play_btn_img = PhotoImage(file='play.png')
+play_btn = Button(control_panel, image=play_btn_img, bg='rosybrown1', width=30, height=30,
+                  command=lambda: play_song(current_song))
+play_btn.place(x=170, y=2)
+
+
 
 
 app.mainloop() # keeps app open
