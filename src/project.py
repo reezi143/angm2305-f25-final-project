@@ -1,42 +1,42 @@
-import requests
 from tkinter import filedialog
 from tkinter import *
 import pygame
 import os
 
+
+
 pygame.mixer.init()
 
 is_paused = False
 
-# Load Music
 def load(song_listbox):
     os.chdir(filedialog.askdirectory(title='choose playlist~♡⊹♬₊⋆'))
     song_listbox.delete(0, END)
 
-    tracks = os.listdir()
+    playlist = os.listdir()
 
-    for track in tracks:
+    for track in playlist:
         song_listbox.insert(END, track)
 
-# Play Music
+
 def play_song(song_name: StringVar):
     song_name.set(song_listbox.get(ACTIVE))
     global is_paused
 
-    if not is_paused: # plays indicated song
+    if not is_paused: 
         pygame.mixer.music.load(song_listbox.get(ACTIVE))
         pygame.mixer.music.play()
-    else: # unpauses currently playing song
+    else: 
         pygame.mixer.music.unpause()
         is_paused = False
 
-# Pause Mong
+
 def pause_song():
     global is_paused
     pygame.mixer.music.pause()
     is_paused = True
 
-# Skip Track
+
 def next_song(song_name): # ONLY SKIPS FROM HIGHLIGHTED
     selection = song_listbox.curselection()
     if selection:
@@ -49,16 +49,11 @@ def next_song(song_name): # ONLY SKIPS FROM HIGHLIGHTED
             song_name.set(song_listbox.get(ACTIVE))
 
 
-# Rewind Track
 def rewind_song():
     global is_paused
     pygame.mixer.music.rewind()
 
-# play next song when current song ends?
 
-
-
-# GUI #
 
 app = Tk()
 app.title('music player⋆｡♬°⭒˚｡⋆♪')
@@ -69,7 +64,6 @@ app_icon = PhotoImage(file='icon.png')
 app.iconphoto(False, app_icon)
 
 
-# Playlist Assets
 playlist_box = LabelFrame(app, fg='gray12', text='‧₊˚♪࿐₊˚⊹playlist‧₊˚♪࿐₊˚⊹', bg='rosybrown4')
 playlist_box.place(x=0, y=79, height=220, width=375)
 
@@ -85,7 +79,6 @@ scroll_bar.config(command=song_listbox.yview)
 song_listbox.pack(fill=BOTH, padx=5, pady=5)
 
 
-# Title Assets
 now_playing = LabelFrame(app, fg='gray12', text='₊°♬˚.⁺now playing⁺.˚♬°₊', bg='mistyrose1', width=375, height=80)
 now_playing.place(x=0, y=0)
 
@@ -95,7 +88,6 @@ title_label = Label(now_playing, textvariable=current_song, bg='antiquewhite4', 
 title_label.place(x=20, y=16)
 
 
-# Control Panel
 control_panel = LabelFrame(app, fg='gray12', text='♪˚⁺control panel⁺˚♪', bg='mistyrose3', width=375, height=202)
 control_panel.place(y=300)
 
@@ -124,7 +116,6 @@ load_btn = Button(control_panel, text='🖤♪~load playlist~♪🖤', bg='rosyb
 load_btn.place(x=6, y=118)
 
 
-# Bottom Strip
 deco_frame = LabelFrame(app, bg='rosybrown', width=375, height=24)
 deco_frame.place(x=0, y=478)
 
@@ -134,4 +125,4 @@ deco_label = Label(deco_frame, textvariable=deco_text, bg='rosybrown', font=("Ge
 deco_label.place(x=20, y=0)
 
 
-app.mainloop() # keeps app open
+app.mainloop() 
