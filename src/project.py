@@ -9,14 +9,14 @@ pygame.mixer.init()
 is_paused = False
 
 # Load Music
-def load(listbox):
+def load(song_listbox):
     os.chdir(filedialog.askdirectory(title='choose playlist~♡⊹♬₊⋆'))
-    listbox.delete(0, END)
+    song_listbox.delete(0, END)
 
     tracks = os.listdir()
 
     for track in tracks:
-        listbox.insert(END, track)
+        song_listbox.insert(END, track)
 
 # Play Music
 def play_song(song_name: StringVar):

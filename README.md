@@ -1,7 +1,7 @@
 # angm2305-f25-final-project
 
 ## Demo
-Demo Video: <URL>
+Demo Video: https://youtu.be/xc-GQGahhwo
 
 ## GitHub Repository
 GitHub Repo: https://github.com/reezi143/angm2305-f25-final-project.git
