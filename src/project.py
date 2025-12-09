@@ -4,7 +4,6 @@ from tkinter import *
 import pygame
 import os
 
-
 pygame.mixer.init()
 
 is_paused = False
@@ -38,8 +37,7 @@ def pause_song():
     is_paused = True
 
 # Skip Track
-def next_song(song_name):
-    # sort of works; next song isn't highlighted, name displays for previously skipped song, song only skips from highlight
+def next_song(song_name): # ONLY SKIPS FROM HIGHLIGHTED
     selection = song_listbox.curselection()
     if selection:
         next_song_index = int(selection[0]) + 1
@@ -113,12 +111,12 @@ pause_btn.place(x=170, y=72)
 
 next_btn_img = PhotoImage(file='skip.png')
 next_btn = Button(control_panel, image=next_btn_img, bg='rosybrown1', width=30, height=30,
-                    command=lambda: next_song(current_song)) # doesn't work/placeholder
+                    command=lambda: next_song(current_song))
 next_btn.place(x=220, y=36)
 
 prev_btn_img = PhotoImage(file='prev.png')
 prev_btn = Button(control_panel, image=prev_btn_img, bg='rosybrown1', width=30, height=30,
-                    command=lrewind()) # doesn't work/placeholder
+                    command=lambda: rewind_song()) #placeholder
 prev_btn.place(x=120, y=36)
 
 load_btn = Button(control_panel, text='🖤♪~load playlist~♪🖤', bg='rosybrown1', fg='gray12', font=("Georgia", 13), width=35,
